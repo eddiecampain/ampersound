@@ -1,0 +1,20 @@
+<article>
+		<header>
+			<h1><%= @beat.title %></h1>
+		</header>
+		<h2>Description</h2>
+			<p>
+				<%= @beat.description %>
+			</p>
+				<h3>Released:</h3>
+				<p>
+					<%= @beat.released_on %>
+				</p>
+				<h3>Genre:</h3>
+				<p>
+					<%= @beat.genre %>
+				</p>
+</article>
+
+<%= link_to "All Beats", root_path %> |
+<%= link_to "Edit", edit_beat_path(@beat) %>

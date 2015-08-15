@@ -1,0 +1,23 @@
+<h1>Editing <%= @beat.title %></h1>
+
+<%= form_for(@beat) do |f| %>
+	<p>
+		<%= f.label :title %></br>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :description %></br>
+		<%= f.text_field :description, cold: 40, rows: 7 %>
+	</p>
+	<p>
+		<%= f.label :genre %></br>
+		<%= f.text_field :genre %>
+	</p>
+	<p>
+		<%= f.label :released_on %></br>
+		<%= f.datetime_select :released_on %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

@@ -1,0 +1,25 @@
+<h1> <%= pluralize(@beats.size, 'Beats') %> </h1>
+
+
+<%= link_to "Add New Beat", new_beat_path %>
+
+<% @beats.each do |beat|  %>
+	<article>
+		<header>
+			<h2><%= link_to(beat.title, beat) %></h2>
+		</header>
+			<p>
+				<%= beat.description %>
+			</p>
+			<table>
+				<tr>
+					<th style ="float: left;">Released:</th>
+					<td><%= beat.released_on %> (<%= time_ago_in_words(beat.released_on) %> ago)</td>
+				</tr>
+				<tr>
+					<th style ="float: left;">Genre:</th>
+					<td><%= beat.genre %></td>
+				</tr>
+		</table>
+	</article>
+<% end %>
